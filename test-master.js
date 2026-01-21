@@ -1,9 +1,6 @@
-
 describe("Be the Test Master", () => {
-
   // Test #1
-  it("Our First Test: Replace the ??? to make the tests pass", function(){
-
+  it("Our First Test: Replace the ??? to make the tests pass", function () {
     let stringValue = "I am a string";
     let numberValue = 484;
 
@@ -12,22 +9,22 @@ describe("Be the Test Master", () => {
   });
 
   // Test #2
-  it('Functions can access/modify variables from a parent scope', () => {
+  it("Functions can access/modify variables from a parent scope", () => {
     var outside_the_function = null;
 
-      function yay(){
-        var inside_the_function = "can you see me?";
-        outside_the_function = inside_the_function;
-      }
-  
-      yay();
-  
-      assert.equal(outside_the_function, "???");
+    function yay() {
+      var inside_the_function = "can you see me?";
+      outside_the_function = inside_the_function;
+    }
+
+    yay();
+
+    assert.equal(outside_the_function, "???");
   });
 
   // Test #3
-  it('Function parameters become scoped to the function', () => {
-    function yay(param){
+  it("Function parameters become scoped to the function", () => {
+    function yay(param) {
       assert.equal(param, "???");
     }
 
@@ -36,18 +33,18 @@ describe("Be the Test Master", () => {
 
   // Test #4
   it("A functions local scope is not available in an outer scope.", () => {
-    function yay(){
+    function yay() {
       var kix = "kid tested mother approved";
       assert.equal(kix, "???");
     }
     yay();
-    
+
     var has_kix;
     // NOTE:
     // "this" is a special object that by default represents the global scope.
     // variables declared globally are stored as a property on the object: this.<variable>
     // if the variable is not global then this.<variable> will be undefined
-    if(this.kix !== undefined){
+    if (this.kix !== undefined) {
       has_kix = kix;
     } else {
       has_kix = "i prefer cheerios";
@@ -57,13 +54,13 @@ describe("Be the Test Master", () => {
 
   // Test #5
   it("Functions don't have access to each others scope", () => {
-    function yay(){
+    function yay() {
       var from_yay = "i'm inside yay;";
     }
 
-    function foo(){
+    function foo() {
       var in_foo = "i'm in foo";
-      if(this.from_yay !== undefined){
+      if (this.from_yay !== undefined) {
         in_foo = this.from_yay;
       }
       assert.equal(in_foo, "???");
@@ -75,10 +72,9 @@ describe("Be the Test Master", () => {
 
   // Test #6
   it("Inner scope variables override outter scope variables.", () => {
-  
     var peanuts = 300;
 
-    function yay(){
+    function yay() {
       var peanuts = "roasted";
 
       assert.equal(peanuts, "???");
@@ -90,8 +86,8 @@ describe("Be the Test Master", () => {
 
   // Test #7
   it("Variables created with var in a funtion are re-created each time", () => {
-    function yay(){
-      if(this.counter !== undefined){
+    function yay() {
+      if (this.counter !== undefined) {
         counter = counter + 1;
       } else {
         var counter = 10;
@@ -109,7 +105,7 @@ describe("Be the Test Master", () => {
   // Test #8
   it("Inner scope can access outer scope", () => {
     var im_outside = "alpha";
-    function yay(){
+    function yay() {
       var im_inside = "omega";
       return im_outside + im_inside;
     }
@@ -120,7 +116,7 @@ describe("Be the Test Master", () => {
   // Test #9
   it("Functions retain outer scope references between calls.", () => {
     var im_outside = 13;
-    function yay(){
+    function yay() {
       im_outside += 1;
     }
 
@@ -132,11 +128,10 @@ describe("Be the Test Master", () => {
 
   // Test #10
   it("We can do goofy stuff with outer scope", () => {
-  
     var hello = "greg";
     var name = "";
 
-    function yay(){
+    function yay() {
       name += hello;
     }
 
@@ -151,28 +146,25 @@ describe("Be the Test Master", () => {
   // Test #11
   it("We can pass functions to other functions and then run them.", () => {
     var im_outter = 10;
-    function yay(){
+    function yay() {
       im_outter /= 5;
     }
-    function something(whatever){
+    function something(whatever) {
       im_outter *= 20;
       whatever();
     }
     something(yay);
     assert.equal(im_outter, "???");
-
   });
 
   // Test #12
   it("We can get crazy with returns.", () => {
-    function yay(){
+    function yay() {
       return " is dog";
     }
-    function foo(whatever){
+    function foo(whatever) {
       return "hello, this" + whatever();
     }
     assert.equal(foo(yay), "???");
   });
-
-
 });
