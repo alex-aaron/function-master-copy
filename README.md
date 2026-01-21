@@ -2,12 +2,7 @@
 
 # Part 1 - Test Master
 
-## Step 1 - Setup
- - `os install function-master`
- - open up `test-master.html` in your c9 and serve it.
- - open up `test-master.js` in your c9 and have a look.
-
-## Step 2 - Be The Test Master
+## Step 1 - Be The Test Master
 `test-master.js` contains a bunch of **unit tests**. **Unit tests** help us verify that our code is doing the right thing by calling our functions with some test data and making sure that our functions do the right thing. These tests are incomplete and it is our job today to complete them.
 
  - Inspect the tests on the page and try to understand what's going on in general.
@@ -40,11 +35,3 @@ Part 1 in that this time around we have a different and new set of tests written
 be writing functions that pass them. 
 
  - If you don't understand what a function is supposed to do, look at the test in `function-master.html`. If you still don't understand, ask your teacher.
-
-## Step 4 - Submit your masterful functions
- - Once you have completed all functions go to your terminal and run the command `os test`
- - Select your class, then select `Function Master`
- - You should see 100% passing tests!
-   - If you are still failing tests, update your code to pass them
- - Then run `os submit`
- - Select your class, then select `Function Master`
