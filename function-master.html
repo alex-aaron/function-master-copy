@@ -21,17 +21,23 @@
     // Do your work in function-master.js
 
     /* global objectValues */
+
     QUnit.test( "objectValues() : Should take an object and return its values in an array", function( assert ) {
+      
       var objectOne = {a: "one", b: "two", ponies: "crayons", dingle: "dangle"};
       var objectTwo = {c: "three", d: "four", crayons: "ponies", dangle: "dingle"};
+
       assert.deepEqual(objectValues(objectOne), ["one","two","crayons","dangle"]);
+                                
       assert.deepEqual(objectValues(objectTwo), ["three","four","ponies","dingle"]);
+
     });
 
     /* global keysToString */
     QUnit.test("keysToString() : Should take an object and return all its keys in a string each separated with a space", function(assert){
       var objectOne = {a: "one", b: "two", ponies: "crayons", dingle: "dangle"};
       var objectTwo = {c: "three", d: "four", crayons: "ponies", dangle: "dingle"};
+
       assert.equal(keysToString(objectOne), "a b ponies dingle");
       assert.equal(keysToString(objectTwo), "c d crayons dangle");
     });

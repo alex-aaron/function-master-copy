@@ -5,23 +5,27 @@
       var some_number = 484;
   
       //                     ┌ Change this to what it should be
-      assert.equal( value, '???');
+      assert.equal( value, 'hello tests');
+  
+    
       //                           ┌ Change this to what it should be
-      assert.equal( some_number, "???");
+      assert.equal( some_number, 484);
     });
   
+
     QUnit.test("Functions can access/modify variables in parent scope.", function(assert){
       var outside_the_function = null;
 
       function yay(){
-        var inside_the_function = "can you see me?";
-        outside_the_function = inside_the_function; 
+        var inside_the_function = "can you see me?"; // assigning "can you see me" to variable inside_the_function
+        outside_the_function = inside_the_function; // outside_the_function = "can you see me?"
       }
   
       yay();
   
-      assert.equal(outside_the_function, "???");
+      assert.equal(outside_the_function, "can you see me?");
     });
+
   
     QUnit.test("Function Parameters become scoped to the function.", function(assert){
   
@@ -31,6 +35,7 @@
   
       yay("a fine kettle of fish");
     });
+
   
     QUnit.test("A functions local scope is not available in an outer scope.", function(assert){
       function yay(){
@@ -62,8 +67,8 @@
         if(this.from_yay !== undefined){
           in_foo = this.from_yay;
         }
-        assert.equal(in_foo, "???");
-        assert.equal(this.from_yay, "???");
+        assert.equal(in_foo, "i'm in foo");
+        assert.equal(this.from_yay, undefined);
       }
       yay();
       foo();

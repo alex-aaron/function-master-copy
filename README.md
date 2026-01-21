@@ -28,6 +28,8 @@
 
 ## Standard Library Methods You Should Know By Now:
  - Object.keys()
+ - Object.values()
+ - Object.entries()
  - String.toUpperCase()
  - String.split()
  - Array.join()
